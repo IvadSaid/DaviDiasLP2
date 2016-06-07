@@ -1,0 +1,73 @@
+namespace ClasseDoTrianguloDia7.6.2016
+{
+public class Triangulo
+    {
+        private int _lado1;
+        private int _lado2;
+        private int _lado3;
+        private int _cor;
+        private int _id;
+        private int _posx;
+        private int _posy;
+        public int Lado1
+        {
+            get { return _lado1;}
+            set
+            {
+                if (value > 0)
+                    _lado1 = value;
+            }
+        }
+        public int Lado2
+        {
+            get { return _lado2; }
+            set
+            {
+                if (value > 0)
+                    _lado2 = value;
+            }
+        }
+        public int Lado3
+        {
+            get { return _lado3; }
+            set
+            {
+                if (value > 0)
+                    _lado3 = value;
+            }
+        }
+        public int Id 
+        { 
+        get { return _id; }
+        set { _id = value; }
+        }
+        public int Cor
+        {
+            get { return _cor; }
+            set { if(value >= 0 && value <= (Math.Pow(2, 24) - 1)) this._cor = value; }
+        }
+        public int Posx
+        {
+            get { return _posx; }
+            set { _posx = value; }
+        }
+
+        public Triangulo( int l1, int l2, int l3) 
+        {
+            if (l1 >= 0 && l1 < l2 + l3)
+            {
+              l1 = _lado1;  
+            
+                if (l2 >= 0 && l2 < l1 + l3)
+                {
+                   l2 = _lado2;
+
+                  if (l3 >= 0 && l3 < l1 + l2)
+                  {
+                   l3 = _lado3;
+                  }
+                }
+            }
+        }
+    }
+}

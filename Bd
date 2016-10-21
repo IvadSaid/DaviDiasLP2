@@ -1,0 +1,42 @@
+--SELECT C.nome, C.id_cliente, C.classe FROM Cliente C
+--WHERE C.classe > 7
+--ORDER BY C.nome ASC;
+
+SELECT DISTINCT I.*, C.* FROM Item I, Cliente C, Pedido P
+WHERE C.classe <= 6
+AND P.id_cliente = C.id_cliente
+AND P.id_item = I.id_item
+ORDER BY C.id_cliente;
+
+--SELECT DISTINCT I.* FROM Item I, Cliente C, Pedido P
+--WHERE I.id_item = P.id_item
+--AND C.id_cliente = P.id_cliente
+--AND (P.id_cliente = 2 OR P.id_cliente = 7);
+
+--SELECT COUNT(P.id_pedido) FROM Pedido P;
+
+--SELECT  COUNT(DISTINCT C.id_cliente) as total FROM Cliente C, Pedido P
+--WHERE C.id_cliente = P.id_cliente
+
+--SELECT MAX(P.quantidade) as total FROM Pedido P WHERE id_item = 125;
+
+--SELECT P.id_item, SUM(P.quantidade) FROM Pedido P
+--GROUP BY P.id_item HAVING COUNT(*) > 0
+
+--Select P.id_item From Pedido P
+--Group By P.id_item Having Count(*) > 1
+
+--Select C.nome From Cliente C ,Pedido P
+--Where C.id_cliente = P.id_cliente AND id_item = 125
+
+
+
+--Select Distinct C.nome From Cliente C, Pedido P, Item I
+--Where C.id_cliente = P.id_cliente
+--and I.id_item = P.id_item 
+--AND NOT I.preco > 100
+
+--SELECT Distinct C.nome From Cliente C, Pedido P, Item I
+--Where C.id_cliente = P.id_cliente
+--and I.id_item = P.id_item 
+--AND I.peso > 1000
